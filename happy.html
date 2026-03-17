@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        /* CSS: The "Cinematic" Look */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f0f0f;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .scene {
+            display: none; /* Hidden by default */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .active {
+            display: block; /* Only show the active scene */
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 20px; color: #ff4d6d; }
+        p { font-size: 1.2rem; max-width: 500px; line-height: 1.6; }
+
+        button {
+            background: #ff4d6d;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff758f;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            background: #333; /* Placeholder color */
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scene1" class="scene active">
+        <h1>Happy sallah !</h1>
+        <p>A cinematic journey created just for you.</p>
+        <button onclick="showScene(2)">Open Your Gift 🎁</button>
+    </div>
+
+    <div id="scene2" class="scene">
+        <h1>It's Your Special Day</h1>
+        <h2>"Distance means so little when someone means so much."</h2>
+        <img src="ME3.png" width="200px" height="220px" style="border-radius: 100px;" alt="" srcset="">
+        <h2 style="color: #ff4d6d;">happy edil mubarak from Abdulrahman Abdullahi Lawal</h2>
+        <p><h2>wishing you a happiest and memoriable edil time, may your ibadat be accepted <br> may we witness next year in good health</h2></p>
+        <button onclick="showScene(3)">Next →</button>
+    </div>
+
+    <div id="scene3" class="scene">
+        <h1>Moments in Time</h1>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/150" class="photo" alt="Memory 1">
+            <img src="https://via.placeholder.com/150" class="photo" alt="Memory 2">
+            <img src="https://via.placeholder.com/150" class="photo" alt="Memory 3">
+        </div>
+        <button onclick="alert('I love you!')">The End ❤️</button>
+    </div>
+
+    <script>
+        // JavaScript: Scene Controller
+        function showScene(sceneNumber) {
+            // Remove 'active' class from all scenes
+            const scenes = document.querySelectorAll('.scene');
+            scenes.forEach(scene => scene.classList.remove('active'));
+
+            // Add 'active' class to the target scene
+            const nextScene = document.getElementById('scene' + sceneNumber);
+            if (nextScene) {
+                nextScene.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
